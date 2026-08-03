@@ -14,9 +14,9 @@ const quickLinks = [
 function BrandLogo() {
     return (
         <div className="flex items-center gap-3">
-            <span className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-dashed border-white/20 bg-white/10">
+            <span className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-white/20 bg-white/10">
                 <img
-                    src="/images/brand/logo-white.svg"
+                    src="/images/brand/mst.svg"
                     alt="Logo perusahaan versi putih"
                     className="h-full w-full object-contain p-2"
                     onError={(event) => {

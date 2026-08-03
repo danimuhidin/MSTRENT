@@ -6,7 +6,7 @@ import WhatsAppFloatButton from '@/Components/layout/WhatsAppFloatButton';
 
 export default function MainLayout({ children, title, description }) {
     return (
-        <div className="min-h-screen overflow-x-hidden bg-brand-offwhite text-brand-gray">
+        <div className="min-h-screen overflow-x-hidden bg-brand-offwhite text-brand-gray" contentEditable={false}>
             <Head title={title || 'Company Profile'}>
                 {description ? <meta name="description" content={description} /> : null}
             </Head>

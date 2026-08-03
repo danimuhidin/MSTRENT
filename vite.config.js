@@ -14,6 +14,11 @@ export default defineConfig({
             "@": path.resolve(__dirname, "resources/js"),
         },
     },
+    server: {
+        watch: {
+            ignored: ['**/public/**'] // Mengabaikan pantauan pada folder public
+        }
+    },
     plugins: [
         laravel({
             input: ["resources/css/app.css", "resources/js/app.jsx"],

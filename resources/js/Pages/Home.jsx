@@ -117,12 +117,12 @@ const testimonials = [
 ];
 
 const partnerLogos = [
-    { name: 'Client One', image: '/images/clients/client-1.png' },
-    { name: 'Client Two', image: '/images/clients/client-2.png' },
-    { name: 'Client Three', image: '/images/clients/client-3.png' },
-    { name: 'Client Four', image: '/images/clients/client-4.png' },
-    { name: 'Client Five', image: '/images/clients/client-5.png' },
-    { name: 'Client Six', image: '/images/clients/client-6.png' },
+    { name: 'Client One', image: '/images/clients/client-1.webp' },
+    { name: 'Client Two', image: '/images/clients/client-2.webp' },
+    { name: 'Client Three', image: '/images/clients/client-3.webp' },
+    { name: 'Client Four', image: '/images/clients/client-4.webp' },
+    { name: 'Client Five', image: '/images/clients/client-5.webp' },
+    { name: 'Client Six', image: '/images/clients/client-6.webp' },
 ];
 
 function ImageFrame({ src, alt, className = '' }) {
@@ -158,7 +158,7 @@ export default function Home() {
                 <div className="space-y-6">
                     <div className="inline-flex items-center gap-2 rounded-full border border-brand-silver bg-white px-4 py-2 text-sm font-medium text-brand-navy">
                         <Sparkles className="h-4 w-4" />
-                        MST RENT - Sewa Laptop Bandung & Jakarta
+                        Metro Smart Technology - Sewa Laptop Bandung & Jakarta
                     </div>
 
                     <div className="space-y-4">
@@ -207,7 +207,7 @@ export default function Home() {
                     <div className="absolute -left-6 top-10 hidden h-24 w-24 rounded-full bg-emerald-200/60 blur-3xl lg:block" />
                     <div className="overflow-hidden rounded-[2rem] border border-brand-silver bg-white p-3 shadow-xl shadow-slate-900/5">
                         <ImageFrame
-                            src="/images/hero/home-hero.jpg"
+                            src="/images/hero/home-hero.png"
                             alt="Hero utama layanan sewa peralatan"
                             className="h-[280px] rounded-[1.5rem] sm:h-[360px] lg:h-[420px]"
                         />

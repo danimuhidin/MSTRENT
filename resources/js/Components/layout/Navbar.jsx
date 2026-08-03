@@ -24,11 +24,11 @@ const productCategories = [
 function BrandLogo() {
     return (
         <Link href="/" className="flex min-w-0 items-center gap-3">
-            <span className="relative flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-dashed border-brand-silver bg-brand-offwhite shadow-sm sm:h-12 sm:w-12">
+            <span className="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl  shadow-sm sm:h-12 sm:w-12">
                 <img
-                    src="/images/brand/logo.svg"
+                    src="/images/brand/mst.svg"
                     alt="Logo perusahaan"
-                    className="h-full w-full object-contain p-2"
+                    className="h-full w-full object-contain p-1"
                     onError={(event) => {
                         event.currentTarget.style.visibility = 'hidden';
                     }}
