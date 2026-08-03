@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 
 import Breadcrumb from '@/Components/layout/Breadcrumb';
+import RentalFlowTimeline from '@/Components/RentalFlowTimeline';
 import MainLayout from '@/Layouts/MainLayout';
 import { buildCompanyWhatsAppLink } from '@/lib/whatsapp';
 
@@ -116,8 +117,8 @@ export default function HowToRent() {
                                     type="button"
                                     onClick={() => setActiveTab(tab.key)}
                                     className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition ${isActive
-                                            ? 'bg-brand-navy text-white shadow-sm'
-                                            : 'text-brand-gray hover:text-brand-navy'
+                                        ? 'bg-brand-navy text-white shadow-sm'
+                                        : 'text-brand-gray hover:text-brand-navy'
                                         }`}
                                 >
                                     <Icon className="h-4 w-4" />
@@ -161,8 +162,8 @@ export default function HowToRent() {
                                     type="button"
                                     onClick={() => setActiveTab(tab.key)}
                                     className={`rounded-[2rem] border p-6 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${isActive
-                                            ? 'border-brand-cyan bg-brand-navy text-white'
-                                            : 'border-brand-silver bg-white text-brand-navy'
+                                        ? 'border-brand-cyan bg-brand-navy text-white'
+                                        : 'border-brand-silver bg-white text-brand-navy'
                                         }`}
                                 >
                                     <div className={`flex h-12 w-12 items-center justify-center rounded-2xl ${isActive ? 'bg-white/10 text-brand-cyan' : 'bg-brand-offwhite text-brand-cyan'}`}>
@@ -195,20 +196,7 @@ export default function HowToRent() {
                     <h2 className="text-3xl font-semibold tracking-tight text-brand-navy">Lima langkah sederhana dari pemilihan produk sampai serah terima.</h2>
                 </div>
 
-                <div className="grid gap-4 xl:grid-cols-5">
-                    {rentalFlow.map((item) => (
-                        <article key={item.step} className="rounded-3xl border border-brand-silver bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
-                            <div className="flex items-center justify-between gap-4">
-                                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-brand-cyan">{item.step}</p>
-                                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-offwhite text-brand-cyan">
-                                    <item.icon className="h-5 w-5" />
-                                </div>
-                            </div>
-                            <h3 className="mt-5 text-lg font-semibold text-brand-navy">{item.title}</h3>
-                            <p className="mt-2 text-sm leading-6 text-brand-gray">{item.description}</p>
-                        </article>
-                    ))}
-                </div>
+                <RentalFlowTimeline items={rentalFlow} className="mt-8" />
             </section>
 
             <section className="mt-20 rounded-[2rem] border border-brand-silver bg-white p-8 shadow-sm sm:p-10">

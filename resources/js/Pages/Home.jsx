@@ -1,18 +1,21 @@
 import { Link, usePage } from '@inertiajs/react';
 import {
     ArrowRight,
-    BadgeCheck,
     CheckCircle2,
+    CreditCard,
+    FileText,
     Globe2,
     Handshake,
     Lock,
+    Package,
     PackageSearch,
     ShieldCheck,
     Sparkles,
-    TimerReset,
     Users,
+    Truck,
 } from 'lucide-react';
 
+import RentalFlowTimeline from '@/Components/RentalFlowTimeline';
 import MainLayout from '@/Layouts/MainLayout';
 import { buildCompanyWhatsAppLink } from '@/lib/whatsapp';
 
@@ -95,6 +98,39 @@ const serviceCards = [
     },
 ];
 
+const rentalFlow = [
+    {
+        step: '01',
+        title: 'Pilih Produk',
+        description: 'Lihat daftar produk & hubungi kami untuk ketersediaan barang.',
+        icon: Package,
+    },
+    {
+        step: '02',
+        title: 'Konfirmasi Pesanan',
+        description: 'Tentukan durasi sewa, tanggal pengambilan, atau pengiriman.',
+        icon: CheckCircle2,
+    },
+    {
+        step: '03',
+        title: 'Penyerahan Dokumen',
+        description: 'Tunjukkan dokumen persyaratan yang diminta.',
+        icon: FileText,
+    },
+    {
+        step: '04',
+        title: 'Pembayaran',
+        description: 'Bayar biaya sewa & uang jaminan sesuai kesepakatan.',
+        icon: CreditCard,
+    },
+    {
+        step: '05',
+        title: 'Pengambilan/Pengiriman',
+        description: 'Barang bisa diambil sendiri atau kami kirim ke lokasi.',
+        icon: Truck,
+    },
+];
+
 const testimonials = [
     {
         name: 'Rina Pratiwi',
@@ -142,7 +178,7 @@ function ImageFrame({ src, alt, className = '' }) {
 }
 
 function SectionLabel({ children }) {
-    return <p className="text-sm font-semibold uppercase tracking-[0.28em] text-emerald-600">{children}</p>;
+    return <p className="text-sm font-semibold uppercase tracking-[0.28em] text-brand-cyan">{children}</p>;
 }
 
 export default function Home() {
@@ -287,43 +323,28 @@ export default function Home() {
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                     <div>
                         <SectionLabel>Cara Sewa</SectionLabel>
-                        <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-                            Empat langkah sederhana untuk mulai sewa.
+                        <h2 className="mt-2 text-2xl font-semibold tracking-tight text-brand-navy sm:text-3xl">
+                            Lima langkah sederhana untuk mulai sewa.
                         </h2>
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-brand-gray">
-                        <TimerReset className="h-4 w-4 text-brand-cyan" />
-                        Proses dibuat singkat dan jelas
+                    <div className="rounded-full bg-brand-offwhite px-4 py-2 text-sm font-medium text-brand-gray">
+                        Panduan singkat sebelum konsultasi
                     </div>
                 </div>
 
-                <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                    {[
-                        { number: '01', title: 'Pilih produk', description: 'Tentukan kategori atau perangkat yang paling sesuai dengan kebutuhan Anda.' },
-                        { number: '02', title: 'Konsultasi via WhatsApp', description: 'Tim kami bantu cek ketersediaan, estimasi durasi, dan kebutuhan tambahan.' },
-                        { number: '03', title: 'Konfirmasi & pengiriman', description: 'Setelah detail disepakati, unit disiapkan dan dikirim ke lokasi Anda.' },
-                        { number: '04', title: 'Gunakan & pengembalian', description: 'Perangkat dipakai sesuai durasi sewa lalu dijadwalkan untuk pengambilan.' },
-                    ].map((item) => (
-                        <article key={item.number} className="rounded-3xl border border-brand-silver bg-brand-offwhite p-5">
-                            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-brand-cyan">{item.number}</p>
-                            <h3 className="mt-4 text-lg font-semibold text-brand-navy">{item.title}</h3>
-                            <p className="mt-2 text-sm leading-6 text-brand-gray">{item.description}</p>
-                        </article>
-                    ))}
-                </div>
+                <RentalFlowTimeline items={rentalFlow} compact className="mt-8" />
 
-                <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-                    {[
-                        'KTP / identitas jelas',
-                        'Deposit sesuai jenis unit',
-                        'Durasi minimal mengikuti kebijakan',
-                        'Area layanan dan pengiriman dikonfirmasi dulu',
-                    ].map((item) => (
-                        <div key={item} className="flex items-start gap-3 rounded-2xl bg-white p-4 shadow-sm ring-1 ring-brand-silver">
-                            <BadgeCheck className="mt-0.5 h-5 w-5 shrink-0 text-brand-cyan" />
-                            <p className="text-sm leading-6 text-brand-gray">{item}</p>
-                        </div>
-                    ))}
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                    <p className="text-sm leading-6 text-brand-gray">
+                        Untuk syarat lengkap dan detail dokumen, lihat halaman cara sewa kami.
+                    </p>
+                    <Link
+                        href="/cara-sewa"
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-brand-cyan transition hover:text-brand-teal"
+                    >
+                        Lihat Syarat &amp; Ketentuan Lengkap
+                        <ArrowRight className="h-4 w-4" />
+                    </Link>
                 </div>
             </section>
 
